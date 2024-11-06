@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Jost:ital,wght@0,100..900;1,100..900&family=Lobster&family=Noto+Sans+Elbasan&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Space+Grotesk:wght@300..700&display=swap');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.linegrade {
+  background: linear-gradient(to bottom, #3333A3 , black 60% );
+  color: #fff;
+}
+
+
+.truncate-title {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.truncate-description {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limit to 2 lines */
+  -webkit-box-orient: vertical;
+}
