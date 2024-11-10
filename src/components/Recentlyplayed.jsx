@@ -1,9 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import http from '../axios'
+import { useNavigate } from 'react-router-dom'
 
 const Recentlyplayed = () => {
   const [music, setMusic] = useState([])
   const [showAll, setShowAll] = useState(false)
+
+  const navigate = useNavigate()
+
+
+  const handlePlaylistID = (id) => {
+    navigate(`/detail/${id}`)
+  }
 
   useEffect(() => {
     const fetchPlaylists = async () => {
@@ -36,7 +44,8 @@ const Recentlyplayed = () => {
         </div>
         <div className='grid gap-3 grid-cols-4 w-full mt-3'>
           {playlistsToShow.map((mix, index) => (
-            <div key={index} className='bg-white/5 hover:bg-white/20 duration-300 cursor-pointer h-[324px] flex flex-col p-5 rounded-lg'>
+            <div key={mix.id} 
+            onClick={() => handlePlaylistID(mix.id)} className='bg-white/5 hover:bg-white/20 duration-300 cursor-pointer h-[324px] flex flex-col p-5 rounded-lg'>
               <img src={mix.images[0]?.url || ""} className='w-full h-[182px]' alt={mix.name || "Mix cover"} />
               <h1 className='text-lg font-bold mt-5 truncate-title'>{mix.name || "Unknown Mix"}</h1>
               <p className='text-lg text-white/70 font-[450] truncate-description'>

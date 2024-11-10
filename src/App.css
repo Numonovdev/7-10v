@@ -11,6 +11,13 @@
   color: #fff;
 }
 
+.linegraded {
+  background: linear-gradient(to bottom, yellow , black 60% );
+  color: #fff;
+}
+
+
+
 
 .truncate-title {
   overflow: hidden;
